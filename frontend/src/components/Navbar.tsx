@@ -50,7 +50,10 @@ const Navbar: React.FC<NavbarProps> = ({className, children}) => {
     return (
         <div className={className}>
             <div className={`flex  justify-between items-center`}>
-                <span className={`font-black text-white dark:text-black  `}>TreeTally</span>
+                <span className={`
+                font-black dark:text-black  
+                 bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text
+                 `}>TreeTally</span>
                 <div className={'flex gap-8 '}>
                     {}
                     {routes.map((item) => (
