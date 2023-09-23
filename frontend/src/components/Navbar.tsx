@@ -3,11 +3,17 @@ import NavbarItem from "@/components/NavbarItem";
 import {AiOutlineHome} from "react-icons/ai";
 import {FcAbout, FcNightLandscape} from "react-icons/fc";
 import {BiAnalyse} from "react-icons/bi";
-import {useEffect, useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
-const Navbar =()=>{
+
+interface NavbarProps {
+    className?: string;
+    children?: React.ReactNode;
+}
+
+const Navbar: React.FC<NavbarProps> = ({className, children}) => {
     const pathname = usePathname()
-    const router =useRouter()
+    const router = useRouter()
     const [theme, setTheme] = useState('light');
 
     useEffect(() => {
@@ -32,32 +38,31 @@ const Navbar =()=>{
             icon: BiAnalyse,
             label: 'Analyze',
             active: pathname === '/analyze',
-            href: '/search',
-        },{
+            href: '/analyze',
+        }, {
             icon: FcAbout,
-            label: 'Search',
+            label: 'About Us',
             active: pathname === '/aboutUs',
-            href: '/search',
+            href: '/about',
         }
     ], [pathname]);
 
     return (
-        <div className={`flex justify-between items-center`}>
-            <span className={`font-b`}>TreeTally</span>
-            <div className={'flex gap-5 '}>
-                {}
-                {routes.map((item)=>(
-                    <NavbarItem key={item.label} {...item}/>
-                ))}
-            {/*<NavbarItem label={`Home`} icon={AiOutlineHome} href={'/home'}/>*/}
-            {/*<NavbarItem label={'Page'} icon={BiAnalyse} href={'/analyze'}/>*/}
-            {/*<NavbarItem label={`About Us`} icon={FcAbout} href={'/aboutus'}/>*/}
-
+        <div className={className}>
+            <div className={`flex  justify-between items-center`}>
+                <span className={`font-black text-white dark:text-black  `}>TreeTally</span>
+                <div className={'flex gap-8 '}>
+                    {}
+                    {routes.map((item) => (
+                        <NavbarItem key={item.label} {...item}/>
+                    ))}
+                </div>
+                <button className={`bg-white mr-5 rounded-full dark:bg-black`} onClick={handleThemeSwitch}>
+                    <FcNightLandscape
+                        size={20}/>
+                </button>
             </div>
-            <button  className={`bg-white mr-5 rounded-full dark:bg-black`} onClick={handleThemeSwitch}>
-                <FcNightLandscape
-                    size={20}/>
-            </button>
+            {children}
         </div>
 
     )
