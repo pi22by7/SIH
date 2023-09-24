@@ -23,6 +23,19 @@ const config: Config = {
                 'gradient-conic':
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
+            maxWidth: {
+                container: '1340px', contentContainer: '1140px', containerSmall: '1024px', containerXs: '768px',
+            }, screens: {
+                xs: '280px',
+                sm: '375px',
+                sml: '500px',
+                md: '667px',
+                mdl: '768px',
+                lg: '960px',
+                lgl: '1024px',
+                xl: `1280px`,
+                xxl: `1440px`,
+            }
         },
     },
     plugins: [],

@@ -5,8 +5,10 @@ import {IconType} from "react-icons";
 import Link from "next/link";
 import {twMerge} from "tailwind-merge";
 import {useRouter} from "next/navigation";
+import Bounce from "../../Motion/Bounce";
 
 interface NavabarItemProps {
+    className?: string;
     label: string;
     icon: IconType
     onClick?: () => void;
@@ -15,21 +17,24 @@ interface NavabarItemProps {
 }
 
 const NavbarItem: React.FC<NavabarItemProps> = ({
-    onClick,
+                                                    onClick,
                                                     label,
                                                     icon: Icon,
                                                     active,
                                                     href,
+                                                    className
                                                 }) => {
-    const router=useRouter()
+    const router = useRouter()
     return (
-        <Link onClick={onClick} href={href} className={twMerge(`
+        <Bounce>
+            <Link onClick={onClick} href={href} className={twMerge(`
         flex flex-row h-auto items-center w-full gap-x-1 text-md font-medium cursor-pointer 
-        transition text-neutral-500 dark:text-neutral-700 py-1
-        `, active && "text-green-500 dark:text-green-500 ")}>
-            <Icon size={24}/>
-            <p className={"truncate w-full"}>{label}</p>
-        </Link>
+        transition text-neutral-500 py-1
+        `, active && "  ", className)}>
+                <Icon className={``} size={24}/>
+                <p className={"truncate w-full hidden md:flex"}>{label}</p>
+            </Link>
+        </Bounce>
     )
 }
 export default NavbarItem;

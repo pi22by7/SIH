@@ -5,6 +5,11 @@ import {FcAbout, FcNightLandscape} from "react-icons/fc";
 import {BiAnalyse} from "react-icons/bi";
 import React, {useEffect, useMemo, useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
+import {FaPeopleGroup, FaTreeCity} from "react-icons/fa6";
+import {GiFruitTree, GiPineTree, GiTreehouse} from "react-icons/gi";
+import Bounce from "../../Motion/Bounce";
+import Image from "next/image";
+
 
 interface NavbarProps {
     className?: string;
@@ -30,17 +35,20 @@ const Navbar: React.FC<NavbarProps> = ({className, children}) => {
     }
     const routes = useMemo(() => [
         {
-            icon: AiOutlineHome,
+            icon: GiTreehouse,
             label: 'Home',
+            className:'text-blue-500',
             active: pathname !== '/',
             href: '/',
         }, {
-            icon: BiAnalyse,
+            icon: GiPineTree,
+            className:'text-green-500',
             label: 'Analyze',
             active: pathname === '/analyze',
             href: '/analyze',
         }, {
-            icon: FcAbout,
+            icon: FaPeopleGroup,
+            className:'text-yellow-500',
             label: 'About Us',
             active: pathname === '/aboutUs',
             href: '/about',
@@ -49,24 +57,26 @@ const Navbar: React.FC<NavbarProps> = ({className, children}) => {
 
     return (
         <div className={className}>
-            <div className={`flex justify-between  items-center`}>
-                <span className={`
-                font-black dark:text-black  
-                 bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text
-                 `}>TreeTally</span>
+            <div className={` flex justify-between  items-center`}>
+                {/*<span className={`*/}
+                {/*font-black dark:text-black  */}
+                {/* bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text*/}
+                {/* `}>TT</span>*/}
+                <Image src={'/images/logo.png'} alt={''} width={32} height={32}/>
                 <div className={'flex gap-8 '}>
                     {}
                     {routes.map((item) => (
                         <NavbarItem key={item.label} {...item}/>
                     ))}
                 </div>
-                <button className={`bg-white mr-5 rounded-full dark:bg-black`} onClick={handleThemeSwitch}>
+                <button className={`bg-black dark:bg-white mr-5 rounded-full  `} onClick={handleThemeSwitch}>
                     <FcNightLandscape
-                        size={20}/>
+                        size={24}/>
                 </button>
             </div>
             {children}
         </div>
+
 
     )
 }

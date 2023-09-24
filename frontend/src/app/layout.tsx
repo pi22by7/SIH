@@ -18,13 +18,19 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={inter.className}>
-        <Navbar className={'transition duration-300 flex flex-col gap-5 h-screen bg-black dark:bg-white p-4'}>
-            <div>
-                <div className={`border-t-2`}></div>
-                {children}
+        <body className={inter.className + " bg-black dark:bg-white transition duration-300"}>
+        <div className=" fixed top-0 left-0 w-full">
+            <div className="">
+                <Navbar className={' transition duration-300  flex flex-col gap-5 bg-black dark:bg-white p-4'}>
+                    <div className={''}>
+                        <div className={`border-t-2`}></div>
+                    </div>
+                </Navbar>
             </div>
-        </Navbar>
+        </div>
+        <div className="pt-16">
+            {children}
+        </div>
         </body>
         </html>
     )
