@@ -3,6 +3,7 @@ import React from "react";
 import HowItWorks from "@/components/HowItWorks";
 import Bounce from "../../Motion/Bounce";
 import TechStack from "@/components/TechStack";
+import Image from "next/image";
 
 interface LandingProps {
     className?: string;
@@ -13,13 +14,21 @@ const Landing: React.FC<LandingProps> = ({className}) => {
     return (
         <div className={`flex flex-col gap-10 items-start  border-neutral-200 dark:border-neutral-200 `}>
             <div className={`relative ml-4 flex flex-col items-start gap-6`}>
-                <div>
-                    <h1 className={` text-3xl mt-5 text-green-500 font-bold`}>Explore local tree information or assess
-                        the
-                        biodiversity in your vicinity with just a
-                        <span className={`bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text`}>
+
+                <div className={`flex mt-8 gap-2  xs:flex-col md:flex-row`}>
+                    <div className={` w-3/4 p-4 bg-neutral-900 flex rounded-3xl `}>
+                        <h1 className={` xs:text-2xl sm:text-3xl md:text-7xl xs:w-screen text-green-500 font-bold`}>Explore local tree information or
+                            assess
+                            the
+                            biodiversity in your vicinity with just a
+                            <span
+                                className={`bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text`}>
                 &nbsp;click</span>🖱️
-                    </h1>
+                        </h1>
+                    </div>
+                    <div className={`bg-neutral-900 rounded-3xl `}>
+                <Image src={'/images/logo.png'} className={``} alt={''} width={300} height={300}/>
+                    </div>
                 </div>
                 <Bounce>
                     <button onClick={() => router.push('/analyze')}

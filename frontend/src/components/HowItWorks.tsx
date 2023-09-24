@@ -44,9 +44,9 @@ const HowItWorks = () => {
     ]
 
     return (
-        <div className={`overflow-hidden flex flex-col gap-10 max-w-contentContainer `}>
+        <div className={`overflow-hidden  flex flex-col gap-10 max-w-contentContainer `}>
             {/*<Bounce>*/}
-            <h1 className={`text-6xl font-bold text-white dark:text-black `}>How it works?</h1>
+            <h1 className={`text-6xl text-green-500 font-bold  dark:text-black `}>How it works?</h1>
             {/*</Bounce>*/}
             <div className={`flex flex-wrap gap-5`}>
                 {Steps.map((step, index) => (

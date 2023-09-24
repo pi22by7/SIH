@@ -11,6 +11,7 @@ const Page=()=>{
                 <AboutUsItem label={'Saumitra T'} image={'/images/SBT.png'}/>
                 <AboutUsItem label={'Kartik Gadad'} image={'/images/kartik.jpg'}/>
                 <AboutUsItem label={'Shivani Banke'} image={'/images/shivani.jpg'}/>
+                <AboutUsItem label={'Almas Kalal'} image={'/images/almas.png'}/>
                 {/*<AboutUsItem label={''} image={'/images/siddharth.jpg'}/>*/}
             </div>
         </div>

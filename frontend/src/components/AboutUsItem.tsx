@@ -15,7 +15,7 @@ const AboutUsItem: React.FC<AboutUsItemProps> = ({
                                                  }) => {
     return (
         <div>
-            <div className={`flex flex-col bg-neutral-900 rounded-3xl gap-2 items-center justify-center`}>
+            <div className={`flex flex-col  rounded-3xl gap-2 items-center justify-center`}>
             <Image
                 width={256}
                 height={256}

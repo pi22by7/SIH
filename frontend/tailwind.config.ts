@@ -16,7 +16,6 @@ const config: Config = {
                 'Montserrat': ['Montserrat', 'sans-serif'],
                 'Inter': ['Inter', 'sans-serif'],
                 'SourceSansPro': ['Source Sans Pro', 'sans-serif'],
-
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const TechStack = () => {
     return (
-        <div className={`overflow-hidden flex flex-col gap-5 max-w-contentContainer `}>
-            <h1 className={`text-6xl text-white font-bold`}>Tech Stack?</h1>
+        <div className={`overflow-hidden mt-10 flex flex-col gap-5 max-w-contentContainer `}>
+            <h1 className={`text-6xl text-green-500 font-bold`}>Tech Stack?</h1>
             <div className={`flex gap-5`}>
                 <Image className={`invert dark:invert-0`} src={'/next.svg'} width={140} height={100} alt={''}/>
                 <Image src={'/react.svg'} width={40} height={40} alt={''}/>

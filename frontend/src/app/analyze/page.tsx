@@ -25,7 +25,7 @@ const Page = () => {
     }
 
     return (
-        <div>
+        <div className={`mt-10`}>
             <input type="file" name={'file'} onChange={handleImage}/>
             <button onClick={handleUpload}>Upload</button>
         </div>

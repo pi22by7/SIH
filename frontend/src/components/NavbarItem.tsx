@@ -28,7 +28,7 @@ const NavbarItem: React.FC<NavabarItemProps> = ({
     return (
         <Bounce>
             <Link onClick={onClick} href={href} className={twMerge(`
-        flex flex-row h-auto items-center w-full gap-x-1 text-md font-medium cursor-pointer 
+        flex flex-row h-auto ml-6 mr-6 items-center w-full gap-x-1 text-md font-medium cursor-pointer 
         transition text-neutral-500 py-1
         `, active && "  ", className)}>
                 <Icon className={``} size={24}/>

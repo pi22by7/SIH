@@ -57,13 +57,9 @@ const Navbar: React.FC<NavbarProps> = ({className, children}) => {
 
     return (
         <div className={className}>
-            <div className={` flex justify-between  items-center`}>
-                {/*<span className={`*/}
-                {/*font-black dark:text-black  */}
-                {/* bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text*/}
-                {/* `}>TT</span>*/}
+            <div className={` flex justify-between  items-center  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 `}>
                 <Image src={'/images/logo.png'} alt={''} width={32} height={32}/>
-                <div className={'flex gap-8 '}>
+                <div className={'flex gap-8 bg-neutral-900 rounded-3xl p-3'}>
                     {}
                     {routes.map((item) => (
                         <NavbarItem key={item.label} {...item}/>
