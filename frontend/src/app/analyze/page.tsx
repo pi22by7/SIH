@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import axios, {isCancel, AxiosError} from 'axios';
 const Page = () => {
     const [image, setImage] = useState('')
-    const handleImage = (e: { target: { files: React.SetStateAction<string>[]; }; }) => {
+    const handleImage = (e: any) => {
         console.log(e.target.files[0])
         setImage(e.target.files[0])
     }

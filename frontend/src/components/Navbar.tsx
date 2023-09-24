@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({className, children}) => {
 
     return (
         <div className={className}>
-            <div className={`flex  justify-between items-center`}>
+            <div className={`flex justify-between  items-center`}>
                 <span className={`
                 font-black dark:text-black  
                  bg-gradient-to-l from-green-200 to-green-500 text-transparent bg-clip-text

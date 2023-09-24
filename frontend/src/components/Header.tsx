@@ -1,4 +1,5 @@
 import {useRouter} from "next/navigation";
+import React from "react";
 
 interface HeaderProps {
     className?: string;
@@ -7,7 +8,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({className}) => {
     const router = useRouter()
     return (
-        <div className={`mt-5 flex flex-col gap-5 items-start border-t-2 border-neutral-200 dark:border-neutral-200 `}>
+        <div className={`mt-5 flex flex-col gap-5 items-start  border-neutral-200 dark:border-neutral-200 `}>
             <div className={`relative ml-4 flex flex-col items-start gap-6`}>
                 <div>
                     <h1 className={` text-3xl mt-5 text-green-500 font-bold`}>Explore local tree information or assess
